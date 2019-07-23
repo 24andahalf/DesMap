@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Big Map</title>
+<script src="scripts/js/jquery-3.4.1.min.js"></script>	
+<script src="scripts/js/TweenMax.min.js"></script>	
+<script src="scripts/js/Draggable.min.js"></script>	
+<script src="scripts/js/CSSPlugin.min.js"></script>	
+<script src="scripts/js/CSSRulePlugin.min.js"></script>	
+<link href="https://fonts.googleapis.com/css?family=IM+Fell+DW+Pica+SC" rel="stylesheet">	
+	
+<script src="scripts/js/POI.js"></script>	
+<script src="scripts/js/ntPOI.js"></script>	
+
+<script src="scripts/js/bigMapJS.js"></script>	
+<link rel="stylesheet" type="text/css" href="scripts/css/bigMapStyle.css">			
+</head>
+
+<body>
+	<div class="customizeContainer">
+		<div class="arrowAdjust"></div>
+	</div>
+	<div class="devTools">
+		<p>Hold CTRL and click on the map to add a new point of interest. Click "Patooey!" to spit out the info from the new point of interest to the console</p>
+		<div class="location"></div>
+		<div class="fillinText">
+			<form>
+			  Hover Text:  <input type="text" name="hoverText" id="inputHoverText">
+			  <br><br>
+			  Popup Text:  <input type="text" name="popupText" id="inputPopupText">
+			</form>
+		</div>
+		<div class="copyHole"></div>
+		<div class="buttonContainer"> 
+			<div class="button">Patooey!</div>
+		</div>
+	</div>
+	<div class="mapContainer">
+		<div class="map">
+			<img src="images/Fullmap.png" style="">	
+		</div>	
+	</div>
+	<div class="popupContainer">
+		<div class="popupHeader"><img src="images/blank.svg"></div>
+		<div class="popupText"></div>	
+		<div class="popupNav">
+			<div class="nav Left disable"></div>
+			<div class="nav Right"></div>
+		</div>
+	</div>	
+</body>
+	
+</html>

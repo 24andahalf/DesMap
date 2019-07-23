@@ -1,0 +1,52 @@
+* { font-family: 'IM Fell DW Pica SC', serif; font-size: 105% }
+.crap{ display: none; }
+
+body { margin: 0; background-color: black; overflow: hidden; display: flex; flex-direction: row; } 
+.mapContainer { width: 100vw; height: 100vh; overflow: hidden; float: left; z-index: 0; background-color: white; }
+.map:hover { cursor: grab !important; }
+.popupContainer { width: 22vw; height: 100vh; box-sizing: border-box; padding: 3em 1em 1em 3.5em;  position: absolute; overflow: hidden; background-image: url(../../images/oldPaper.png); background-size: cover; background-color: rgba(0,0,0,0.25); right: 0; top: 0;  box-shadow: 0px -25px 25px 25px rgba(0,0,0,0.25);  }
+.map { /* width: 4134px; height: 3639px; background-image: url(../../images/Fullmap.jpg);*/ position: relative; display: inline-block;}
+.POI, .ntPOI { width: 20px; height: 20px; /*background-color: green; border-radius: 50%; background-image: url(../../images/mapIcon.svg)*/;position: absolute; /* border: solid 5px red; */ box-sizing: border-box; }
+.POI:hover, .ntPOI:hover { cursor: pointer; }
+.POI>img, .ntPOI>img { width: 40px; position: absolute; left: -10px; top: -30px; z-index: 2; }
+.POI.active, .ntPOI.active { border-color: white; z-index: 3; }
+.POI>.child, .ntPOI>.child{ padding: 5px 10px; width: 200px; position: absolute; left: -90px; bottom: 60px;  content: attr(data-content); background-color: white; color: black; display: none; opacity: 0; text-align: center; pointer-events: none; }
+.POI>.arrowFrom { height:20px; width: 50px; position: absolute; left: 15px; top: -2.5px; opacity: 0.5; pointer-events: none; visibility: hidden; }
+.arrowFrom>img { width: 100%; height: 100%; }
+/* POI positioning */	
+.child { color: black; z-index: 99; } 
+.popupHeader { color: white; position: relative; width: 100%; height: 20%; float: left;}
+.popupHeader>img { width: 100%; height: 100%; padding-bottom: 1em; box-sizing: border-box; }
+.popupText { color: #59381d; position: relative; width: 100%; height: 70%; float: right; overflow-y: auto; }
+.popupNav { width: 100%; height: 10%; float: left; position: relative; }
+.nav { height: 80%; width: 20%; top: 10%; color: white; position: absolute; transition: opacity 0.5s; background-size: contain; background-repeat: no-repeat; background-position: center; background-image: url(../../images/chevron.svg); }
+.nav:hover { cursor: pointer; }
+.Left { left: 0px; }
+.Right { right: 0px; transform: rotate(180deg); }
+.devTools { position: fixed; top: 20px; left: 20px; width: calc(80% - 40px); height: 120px; color: black; background-color: white; z-index: 1; display: none;} 
+.location { width: 200px; height: 3em; color: black; background-color: white; z-index: 1; float: left; }
+.fillinText { width: 500px; height: 3em; color: black; background-color: white; z-index: 1; float: left; }
+.buttonContainer { width: 500px; height: 3em; color: black; background-color: white; z-index: 1; float: left; }
+.button { padding: 5px 10px; background-color: red; width: 100px; text-align: center;}
+input { width: 75%; }
+.disable { pointer-events: none; opacity: 0.3; }
+.blocked { pointer-events: none; }
+.arrowAdjust { background-color: blue; width: 40px; height: 40px; position: fixed; top: 30px; right: 22vw; z-index: 99; border-radius: 50%;}
+.arrowAdjust:hover { cursor: pointer; }
+
+.all>.arrowFrom{ visibility: visible; }
+.some.active>.arrowFrom{ visibility: visible; }
+.beforeActive>.arrowFrom{ visibility: visible; }
+.none>.arrowFrom{  }
+
+.copyHole { display: none; }
+
+@media screen and (orientation: portrait) {
+
+	body { display: block !important;  }
+	.mapContainer { width: 100vw; height: 100vh; clear: right; }
+	.popupContainer { width: 100vw; height: 20vh; bottom: 0; left: 0; }
+	.popupHeader { width: 20%; height: 100%; }
+	.popupText { width: 60%; height: 100%; float: left; }
+	.popupNav { width: 18%; height: 100%; float: right; }
+}
